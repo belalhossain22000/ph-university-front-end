@@ -1,35 +1,11 @@
 
-import { Layout, Menu, MenuProps, } from 'antd';
+import { Layout, Menu} from 'antd';
 import { Outlet } from 'react-router-dom';
+import { adminSidebarItems } from '../../Routes/admin.routes';
 
 
 const { Header, Content, Footer, Sider } = Layout;
 
-
-const items: MenuProps['items'] = [
-    {
-        key:1,
-        label:"Dashboard"
-    },
-    {
-        key:2,
-        label:"Profile"
-    },
-    {
-        key:3,
-        label:"User Management",
-        children:[
-            {
-                key:"A",
-                label:"Create Admin"
-            },
-            {
-                key:"B",
-                label:"Create Faculty"
-            },
-        ]
-    },
-];
 
 const MainLayout = () => {
   return (
@@ -45,7 +21,7 @@ const MainLayout = () => {
         }}
       >
         <div style={{color:"white",height:"65px",display:"flex",justifyContent:"center",alignItems:"center",fontSize:"20px",fontWeight: "bold"}} >PH UNIVERSITY</div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
       </Sider>
       <Layout>
         <Header style={{ padding: 0, }} />
